@@ -16,5 +16,10 @@ o.completeopt = "menuone,noinsert,noselect"
 o.shortmess:append("c")
 o.splitright = true
 o.splitbelow = true
+o.mouse = ''
+o.equalalways = false
+o.termguicolors = true
 
 vim.g.mapleader = " "
+vim.g.neoformat_try_node_exe = 1
+vim.g.gruvbox_flat_style = 'dark'

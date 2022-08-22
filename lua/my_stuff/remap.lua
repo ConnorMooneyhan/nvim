@@ -1,4 +1,5 @@
 local keymap = require('my_stuff.keymap')
+local telescope = require('telescope.builtin')
 
 local map = keymap.map
 local n = keymap.nnoremap
@@ -8,16 +9,23 @@ local i = keymap.inoremap
 local t = keymap.tnoremap
 
 n('<leader>e', '<cmd>NERDTreeToggle<CR>')
-n('<leader>f', require("telescope.builtin").find_files)
-n('<leader>t', '<cmd>15 split | term<CR> <cmd>set number& relativenumber& signcolumn&<CR> i')
+n('<leader>c', '<cmd>botright 15 split | term<CR> <cmd>set number& relativenumber& signcolumn&<CR> i')
+n('<leader>p', telescope.find_files)
+n('<leader>s', telescope.live_grep)
+n('<leader>f', '<cmd>Neoformat prettier<CR>')
 n('<leader>q', '<cmd>q<CR>')
-n('<silent>gd', 'vim.lsp.buf.definition')
-n('<silent>gtd', 'vim.lsp.buf.type_definition')
-n('<silent>gr', 'vim.lsp.buf.references')
+n('<silent>gd', vim.lsp.buf.definition)
+n('<silent>gtd', vim.lsp.buf.type_definition)
+n('<silent>gr', vim.lsp.buf.references)
+n('<silent>gn', vim.lsp.buf.rename)
 n('<C-h>', '<C-w>h')
 n('<C-j>', '<C-w>j')
 n('<C-k>', '<C-w>k')
 n('<C-l>', '<C-w>l')
+--n('<C-S-h>', '<cmd>-tabnext<CR>')
+--n('<C-S-l>', '<cmd>+tabnext<CR>')
+n('<leader>tn', '<cmd>tabnew<CR>')
+n('<leader>tc', '<cmd>tabclose<CR>')
 
 t('<Esc>', '<C-\\><C-n>')
 t('<C-h>', '<C-\\><C-n><C-w>h')

@@ -8,7 +8,6 @@ require('mason-lspconfig').setup({
     'cssmodules_ls',
     'cssls',
     'cucumber_language_server',
-    'emmet_ls',
     'html',
     'intelephense',
     'jsonls',
@@ -25,16 +24,30 @@ require('mason-lspconfig').setup({
 require('lualine').setup({
   options = {
     theme = 'everforest',
-    refresh = { statusline = 100 }
+    refresh = { statusline = 100 },
+    globalstatus = true,
+  },
+  sections = {
+    lualine_c = {{
+      'filename',
+      path = 1,
+    }},
+    lualine_x = {'filetype'},
+  },
+  extensions = {
+    'nerdtree',
+    'fugitive',
+    'quickfix',
   }
 })
 
+require('luasnip.loaders.from_vscode').lazy_load()
 local cmp = require('cmp')
 cmp.setup({
   -- Enable LSP snippets
   snippet = {
     expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body)
+      require('luasnip').lsp_expand(args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert({
@@ -42,13 +55,29 @@ cmp.setup({
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-Enter>'] = cmp.mapping.confirm({ select = true }),
     ['<C-e>'] = cmp.mapping.close(),
   }),
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'vsnip' },
+    { name = 'luasnip' },
     { name = 'path' },
     { name = 'buffer' },
   },
+  window = {
+    documentation = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    },
+  },
 })
+
+local lsp = require('lsp-zero')
+lsp.preset('recommended')
+lsp.configure('tsserver', {
+  init_options = {
+    preferences = {
+      includeCompletionsForImportStatements = true,
+    }
+  }
+})
+lsp.setup()
