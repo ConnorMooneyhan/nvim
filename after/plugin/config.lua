@@ -21,6 +21,11 @@ require('mason-lspconfig').setup({
   }
 })
 
+should_shorten = true
+function shorten_branch(str)
+  return string.len(str) >= 15 and string.sub(str, 1, 15) .. '...' or str
+end
+
 require('lualine').setup({
   options = {
     theme = 'everforest',
@@ -28,6 +33,15 @@ require('lualine').setup({
     globalstatus = true,
   },
   sections = {
+    lualine_b = {
+      {
+        'branch',
+        on_click = function() print('hello from on_click') end,
+        fmt = function(str) return should_shorten and shorten_branch(str) or str end,
+      },
+      'diff',
+      'diagnostics'
+    },
     lualine_c = {{
       'filename',
       path = 1,
