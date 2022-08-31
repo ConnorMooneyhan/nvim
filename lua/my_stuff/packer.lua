@@ -3,6 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'gruvbox-community/gruvbox'
+  use 'sainnhe/gruvbox-material'
   use 'eddyekofo94/gruvbox-flat.nvim'
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
@@ -39,4 +40,5 @@ return require('packer').startup(function(use)
   use 'airblade/vim-gitgutter'
   use 'sbdchd/neoformat'
   use 'folke/lsp-colors.nvim'
+  use 'norcalli/nvim-colorizer.lua'
 end)

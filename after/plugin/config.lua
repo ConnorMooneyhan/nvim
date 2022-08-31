@@ -2,6 +2,16 @@ require('lspconfig').rust_analyzer.setup({})
 require('mason').setup()
 require('rust-tools').setup({})
 
+require('lspconfig').sumneko_lua.setup({
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = {"vim"}
+      }
+    }
+  }
+})
+
 require('mason-lspconfig').setup({
   automatic_installation = false,
   ensure_installed = {
@@ -36,7 +46,7 @@ require('lualine').setup({
     lualine_b = {
       {
         'branch',
-        on_click = function() print('hello from on_click') end,
+        -- on_click = function() print('hello from on_click') end,
         fmt = function(str) return should_shorten and shorten_branch(str) or str end,
       },
       'diff',
@@ -95,3 +105,11 @@ lsp.configure('tsserver', {
   }
 })
 lsp.setup()
+
+require('nvim-treesitter.configs').setup {
+  highlight = {
+    enable = true
+  }
+}
+
+-- require'colorizer'.setup(nil, { css = true, mode = 'foreground' })

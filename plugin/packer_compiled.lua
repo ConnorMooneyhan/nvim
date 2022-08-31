@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/ConnorM/.local/share/nvim/site/pack/packer/start/gruvbox-flat.nvim",
     url = "https://github.com/eddyekofo94/gruvbox-flat.nvim"
   },
+  ["gruvbox-material"] = {
+    loaded = true,
+    path = "/home/ConnorM/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
+  },
   ["lsp-colors.nvim"] = {
     loaded = true,
     path = "/home/ConnorM/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
@@ -163,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ConnorM/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/home/ConnorM/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
