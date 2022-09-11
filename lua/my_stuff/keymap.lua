@@ -16,8 +16,5 @@ M.vnoremap = bind('v')
 M.xnoremap = bind('x')
 M.inoremap = bind('i')
 M.tnoremap = bind('t')
-M.map = function(lhs, rhs)
-  vim.keymap.set({'n', 'v', 'i', 'x', 't'}, lhs, rhs)
-end
 
 return M

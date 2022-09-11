@@ -12,7 +12,10 @@ return require('packer').startup(function(use)
     'BurntSushi/ripgrep',
     'sharkdp/fd'
   }
-  use 'nvim-treesitter/nvim-treesitter'
+  use {
+   'nvim-treesitter/nvim-treesitter',
+   'windwp/nvim-ts-autotag',
+  }
   use 'tpope/vim-fugitive'
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -41,4 +44,5 @@ return require('packer').startup(function(use)
   use 'sbdchd/neoformat'
   use 'folke/lsp-colors.nvim'
   use 'norcalli/nvim-colorizer.lua'
+  use 'terrortylor/nvim-comment'
 end)

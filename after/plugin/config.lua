@@ -107,9 +107,46 @@ lsp.configure('tsserver', {
 lsp.setup()
 
 require('nvim-treesitter.configs').setup {
+  ensure_installed = {
+    "bash",
+    "css",
+    "dockerfile",
+    "html",
+    "lua",
+    "javascript",
+    "php",
+    "rust",
+    "scss",
+    "sql",
+    "toml",
+    "tsx",
+    "typescript",
+    "vim",
+    "yaml",
+  },
+  indent = {
+    enable = true
+  },
   highlight = {
     enable = true
-  }
+  },
+  autotag = { -- nvim-ts-autotag 
+    enable = true,
+  },
 }
+
+-- vim.lsp.handlers['testDocument/publishDiagnostics'] = vim.lsp.with(
+--   vim.lsp.diagnostic.on_publish_diagnostics,
+--   {
+--     underline = true,
+--     virtual_text = {
+--       spacing = 5,
+--       severity_limit = 'Warning',
+--     },
+--     update_in_insert = true,
+--   }
+-- )
+
+require('nvim_comment').setup()
 
 -- require'colorizer'.setup(nil, { css = true, mode = 'foreground' })
