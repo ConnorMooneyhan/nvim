@@ -45,4 +45,5 @@ return require('packer').startup(function(use)
   use 'terrortylor/nvim-comment'
   use 'kyazdani42/nvim-tree.lua'
   use 'rrethy/nvim-base16'
+  use 'fladson/vim-kitty'
 end)

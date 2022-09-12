@@ -59,7 +59,7 @@ require('lualine').setup({
     lualine_x = {'filetype'},
   },
   extensions = {
-    'nerdtree',
+    'nvim-tree',
     'fugitive',
     'quickfix',
   }
@@ -159,6 +159,14 @@ require('catppuccin').setup({
   }
 })
 
-require('nvim-tree').setup()
+require('nvim-tree').setup({
+  hijack_cursor = true
+})
+
+require('telescope').setup({
+  defaults = {
+    border = false
+  }
+})
 
 -- require'colorizer'.setup(nil, { css = true, mode = 'foreground' })
