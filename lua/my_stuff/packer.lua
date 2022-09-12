@@ -2,15 +2,14 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'gruvbox-community/gruvbox'
-  use 'sainnhe/gruvbox-material'
-  use 'eddyekofo94/gruvbox-flat.nvim'
+  use { 'catppuccin/nvim', as = 'catppuccin' }
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use {
     'nvim-telescope/telescope.nvim',
     'BurntSushi/ripgrep',
-    'sharkdp/fd'
+    'sharkdp/fd',
+    'nvim-telescope/telescope-file-browser.nvim'
   }
   use {
    'nvim-treesitter/nvim-treesitter',
@@ -34,7 +33,6 @@ return require('packer').startup(function(use)
     'rafamadriz/friendly-snippets',
   }
   use 'simrat39/rust-tools.nvim'
-  use 'preservim/nerdtree'
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -45,4 +43,6 @@ return require('packer').startup(function(use)
   use 'folke/lsp-colors.nvim'
   use 'norcalli/nvim-colorizer.lua'
   use 'terrortylor/nvim-comment'
+  use 'kyazdani42/nvim-tree.lua'
+  use 'rrethy/nvim-base16'
 end)

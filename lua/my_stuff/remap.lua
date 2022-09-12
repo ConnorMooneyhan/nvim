@@ -8,8 +8,8 @@ local x = keymap.xnoremap
 local i = keymap.inoremap
 local t = keymap.tnoremap
 
-n('<leader>e', '<cmd>NERDTreeToggle<CR>')
 n('<leader>c', '<cmd>botright 15 split | term<CR> <cmd>set number& relativenumber& signcolumn&<CR> i')
+n('<leader>e', '<cmd>NvimTreeFindFileToggle<CR>')
 n('<leader>p', telescope.find_files)
 n('<leader>s', telescope.live_grep)
 n('<leader>f', '<cmd>Neoformat prettier<CR>')

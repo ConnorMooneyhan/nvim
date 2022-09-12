@@ -2,16 +2,6 @@ require('lspconfig').rust_analyzer.setup({})
 require('mason').setup()
 require('rust-tools').setup({})
 
-require('lspconfig').sumneko_lua.setup({
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = {"vim"}
-      }
-    }
-  }
-})
-
 require('mason-lspconfig').setup({
   automatic_installation = false,
   ensure_installed = {
@@ -28,6 +18,16 @@ require('mason-lspconfig').setup({
     'tsserver',
     'vimls',
     'yamlls'
+  }
+})
+
+require('lspconfig').sumneko_lua.setup({
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
   }
 })
 
@@ -148,5 +148,18 @@ require('nvim-treesitter.configs').setup {
 -- )
 
 require('nvim_comment').setup()
+
+require('catppuccin').setup({
+  term_colors = true,
+  integrations = {
+    gitsigns = true,
+    cmp = true,
+    telescope = true,
+    treesitter = true,
+    nvimtree = true
+  }
+})
+
+require('nvim-tree').setup()
 
 -- require'colorizer'.setup(nil, { css = true, mode = 'foreground' })
