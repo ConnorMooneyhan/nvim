@@ -38,7 +38,7 @@ end
 
 require('lualine').setup({
   options = {
-    theme = 'everforest',
+    theme = 'catppuccin', -- also try everforest
     refresh = { statusline = 100 },
     globalstatus = true,
   },
@@ -150,7 +150,6 @@ require('nvim-treesitter.configs').setup {
 require('nvim_comment').setup()
 
 require('catppuccin').setup({
-  term_colors = true,
   integrations = {
     gitsigns = true,
     cmp = true,
