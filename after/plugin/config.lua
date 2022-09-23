@@ -1,8 +1,7 @@
-require('lspconfig').rust_analyzer.setup({})
-require('mason').setup()
-require('rust-tools').setup({})
+require'mason'.setup()
+require'rust-tools'.setup {}
 
-require('mason-lspconfig').setup({
+require'mason-lspconfig'.setup {
   automatic_installation = false,
   ensure_installed = {
     'cssmodules_ls',
@@ -19,9 +18,11 @@ require('mason-lspconfig').setup({
     'vimls',
     'yamlls'
   }
-})
+}
 
-require('lspconfig').sumneko_lua.setup({
+local lspconfig = require'lspconfig'
+lspconfig.rust_analyzer.setup {}
+lspconfig.sumneko_lua.setup {
   settings = {
     Lua = {
       diagnostics = {
@@ -29,59 +30,31 @@ require('lspconfig').sumneko_lua.setup({
       }
     }
   }
-})
-
-should_shorten = true
-function shorten_branch(str)
-  return string.len(str) >= 15 and string.sub(str, 1, 15) .. '...' or str
-end
-
-require('lualine').setup({
-  options = {
-    theme = 'catppuccin', -- also try everforest
-    refresh = { statusline = 100 },
-    globalstatus = true,
-  },
-  sections = {
-    lualine_b = {
-      {
-        'branch',
-        -- on_click = function() print('hello from on_click') end,
-        fmt = function(str) return should_shorten and shorten_branch(str) or str end,
-      },
-      'diff',
-      'diagnostics'
-    },
-    lualine_c = {{
-      'filename',
-      path = 1,
-    }},
-    lualine_x = {'filetype'},
-  },
-  extensions = {
-    'nvim-tree',
-    'fugitive',
-    'quickfix',
+}
+lspconfig.tsserver.setup {
+  init_options = {
+    preferences = {
+      includeCompletionsForImportStatements = true,
+    }
   }
-})
+}
 
 require('luasnip.loaders.from_vscode').lazy_load()
-local cmp = require('cmp')
-cmp.setup({
-  -- Enable LSP snippets
+local cmp = require'cmp'
+cmp.setup {
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
     end,
   },
-  mapping = cmp.mapping.preset.insert({
+  mapping = cmp.mapping.preset.insert {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Enter>'] = cmp.mapping.confirm({ select = true }),
+    ['<Enter>'] = cmp.mapping.confirm { select = true },
     ['<C-e>'] = cmp.mapping.close(),
-  }),
+  },
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
@@ -93,20 +66,19 @@ cmp.setup({
       border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
     },
   },
-})
+}
+-- cmp.setup.cmdline(':', {
+--   sources = {
+--     { name = 'cmdline' }
+--   }
+-- })
 
-local lsp = require('lsp-zero')
-lsp.preset('recommended')
-lsp.configure('tsserver', {
-  init_options = {
-    preferences = {
-      includeCompletionsForImportStatements = true,
-    }
-  }
-})
+local lsp = require'lsp-zero'
+lsp.preset'lsp-only'
+lsp.nvim_workspace()
 lsp.setup()
 
-require('nvim-treesitter.configs').setup {
+require'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "bash",
     "css",
@@ -133,40 +105,83 @@ require('nvim-treesitter.configs').setup {
   autotag = { -- nvim-ts-autotag 
     enable = true,
   },
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ['if'] = '@function.inner',
+        ['af'] = '@function.outer',
+        ['ic'] = '@call.inner',
+        ['ac'] = '@call.outer',
+      }
+    },
+    move = {
+      enable = true,
+      set_jumps = true,
+      goto_next_start = {
+        ['<C-\'>'] = '@function.outer'
+      },
+      goto_next_end = {},
+      goto_previous_start = {
+        ['<C-;>'] = '@function.outer'
+      },
+      goto_previous_end = {},
+    },
+    lsp_interop = {
+      enable = true,
+      border = 'none',
+      peek_definition_code = {
+        ['<leader>df'] = '@function.outer',
+      }
+    }
+  },
+  context_commentstring = {
+    enable = true
+  }
 }
 
--- vim.lsp.handlers['testDocument/publishDiagnostics'] = vim.lsp.with(
---   vim.lsp.diagnostic.on_publish_diagnostics,
---   {
---     underline = true,
---     virtual_text = {
---       spacing = 5,
---       severity_limit = 'Warning',
---     },
---     update_in_insert = true,
---   }
--- )
-
-require('nvim_comment').setup()
-
-require('catppuccin').setup({
+require'catppuccin'.setup {
   integrations = {
     gitsigns = true,
     cmp = true,
     telescope = true,
     treesitter = true,
     nvimtree = true
-  }
-})
+  },
+}
 
-require('nvim-tree').setup({
-  hijack_cursor = true
-})
+require'telescope'.setup {
+  -- defaults = {
+  --   border = false
+  -- }
+}
 
-require('telescope').setup({
-  defaults = {
-    border = false
-  }
-})
-
--- require'colorizer'.setup(nil, { css = true, mode = 'foreground' })
+local autopairs = require'nvim-autopairs'
+local Rule = require'nvim-autopairs.rule'
+autopairs.setup()
+autopairs.add_rules { -- add extra space between pairs
+  Rule(' ', ' ')
+    :with_pair(function (opts)
+      local pair = opts.line:sub(opts.col - 1, opts.col)
+      return vim.tbl_contains({ '()', '[]', '{}' }, pair)
+    end),
+  Rule('( ', ' )')
+      :with_pair(function() return false end)
+      :with_move(function(opts)
+          return opts.prev_char:match('.%)') ~= nil
+      end)
+      :use_key(')'),
+  Rule('{ ', ' }')
+      :with_pair(function() return false end)
+      :with_move(function(opts)
+          return opts.prev_char:match('.%}') ~= nil
+    end)
+    :use_key('}'),
+  Rule('[ ', ' ]')
+    :with_pair(function() return false end)
+    :with_move(function(opts)
+        return opts.prev_char:match('.%]') ~= nil
+    end)
+    :use_key(']')
+} 

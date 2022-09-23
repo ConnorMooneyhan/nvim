@@ -8,12 +8,14 @@ local x = keymap.xnoremap
 local i = keymap.inoremap
 local t = keymap.tnoremap
 
-n('<leader>c', '<cmd>botright 15 split | term<CR> <cmd>set number& relativenumber& signcolumn&<CR> i')
-n('<leader>e', '<cmd>NvimTreeFindFileToggle<CR>')
+n('<leader>c', ':botright 15 split | term<CR> :set number& relativenumber& signcolumn&<CR> i')
+n('<leader>e', ':NvimTreeFindFileToggle<CR>')
 n('<leader>p', telescope.find_files)
 n('<leader>s', telescope.live_grep)
-n('<leader>f', '<cmd>Neoformat prettier<CR>')
-n('<leader>q', '<cmd>q<CR>')
+n('<leader>f', ':Neoformat prettier<CR>')
+n('<leader>q', ':q<CR>')
+n('<leader>mk', ':move .-2<CR>')
+n('<leader>mj', ':move .+1<CR>')
 n('<silent>gd', vim.lsp.buf.definition)
 n('<silent>gtd', vim.lsp.buf.type_definition)
 n('<silent>gr', vim.lsp.buf.references)
@@ -30,8 +32,5 @@ t('<C-j>', '<C-\\><C-n><C-w>j')
 t('<C-k>', '<C-\\><C-n><C-w>k')
 t('<C-l>', '<C-\\><C-n><C-w>l')
 
-i('<C-h>', '<Esc><C-w>h')
-i('<C-j>', '<Esc><C-w>j')
-i('<C-k>', '<Esc><C-w>k')
-i('<C-l>', '<Esc><C-w>l')
+i('<C-l>', '<Del>')
 i('<C-Space>', '<CR><Up><End><CR>')
