@@ -71,8 +71,9 @@ cmp.setup {
 cmp.setup.cmdline(':', {
   mapping = {
     ['<C-CR>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'c' }),
-    ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'c' }),
-    ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'c' }),
+    ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'c' }),
+    ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'c' }),
+    ['<C-e>'] = cmp.mapping(cmp.mapping.complete(), { 'c' }),
   },
   sources = {
     { name = 'cmdline' },
