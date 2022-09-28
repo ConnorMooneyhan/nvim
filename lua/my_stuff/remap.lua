@@ -12,7 +12,7 @@ n('<leader>c', ':botright 15 split | term<CR> :set number& relativenumber& signc
 n('<leader>e', ':NvimTreeFindFileToggle<CR>')
 n('<leader>p', telescope.find_files)
 n('<leader>s', telescope.live_grep)
-n('<leader>f', ':Neoformat prettier<CR>')
+n('<leader>f', ':Neoformat<CR>')
 n('<leader>q', ':q<CR>')
 n('<leader>mk', ':move .-2<CR>')
 n('<leader>mj', ':move .+1<CR>')
