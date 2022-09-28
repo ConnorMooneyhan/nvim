@@ -59,7 +59,7 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'path' },
-    { name = 'buffer' },
+    { name = 'emoji' },
   },
   window = {
     documentation = {
@@ -67,11 +67,29 @@ cmp.setup {
     },
   },
 }
--- cmp.setup.cmdline(':', {
---   sources = {
---     { name = 'cmdline' }
---   }
--- })
+
+cmp.setup.cmdline(':', {
+  mapping = {
+    ['<C-CR>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'c' }),
+    ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'c' }),
+    ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'c' }),
+  },
+  sources = {
+    { name = 'cmdline' },
+    { name = 'emoji' },
+  }
+})
+
+cmp.setup.cmdline('/', {
+  mapping = {
+    ['<C-CR>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'c' }),
+    ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'c' }),
+    ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'c' }),
+  },
+  sources = {
+    { name = 'buffer' },
+  }
+})
 
 local lsp = require'lsp-zero'
 lsp.preset'lsp-only'

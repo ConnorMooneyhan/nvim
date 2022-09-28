@@ -94,6 +94,16 @@ _G.packer_plugins = {
     path = "/home/ConnorM/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
+  ["cmp-emoji"] = {
+    loaded = true,
+    path = "/home/ConnorM/.local/share/nvim/site/pack/packer/start/cmp-emoji",
+    url = "https://github.com/hrsh7th/cmp-emoji"
+  },
+  ["cmp-git"] = {
+    loaded = true,
+    path = "/home/ConnorM/.local/share/nvim/site/pack/packer/start/cmp-git",
+    url = "https://github.com/petertriho/cmp-git"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/ConnorM/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
