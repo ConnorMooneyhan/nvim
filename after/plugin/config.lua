@@ -70,7 +70,7 @@ cmp.setup {
 
 cmp.setup.cmdline(':', {
   mapping = {
-    ['<C-CR>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'c' }),
+    ['<Enter>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'c' }),
     ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'c' }),
     ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'c' }),
     ['<C-e>'] = cmp.mapping(cmp.mapping.complete(), { 'c' }),
@@ -84,9 +84,9 @@ cmp.setup.cmdline(':', {
 
 cmp.setup.cmdline('/', {
   mapping = {
-    ['<C-CR>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'c' }),
-    ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'c' }),
-    ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'c' }),
+    ['<Enter>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'c' }),
+    ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'c' }),
+    ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'c' }),
   },
   sources = {
     { name = 'buffer' },
