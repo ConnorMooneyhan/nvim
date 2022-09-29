@@ -78,6 +78,7 @@ cmp.setup.cmdline(':', {
   sources = {
     { name = 'cmdline' },
     { name = 'emoji' },
+    { name = 'path' },
   }
 })
 
