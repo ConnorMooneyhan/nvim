@@ -43,5 +43,6 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-autopairs' -- auto-pair feature
   use 'windwp/nvim-ts-autotag' -- autoclose and autorename xml tags
   use 'tpope/vim-surround' -- surroundings deletion and insertion
+  use 'tpope/vim-fugitive' -- git integration
   use 'fladson/vim-kitty' -- kitty.conf highlight support
 end)
