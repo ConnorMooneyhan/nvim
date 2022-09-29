@@ -18,6 +18,7 @@ o.splitright = true
 o.splitbelow = true
 o.mouse = ''
 o.termguicolors = true
+o.pumheight = 10
 
 vim.g.loaded = 1
 -- vim.g.loaded_netrwPlugin = 1

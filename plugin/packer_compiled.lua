@@ -99,11 +99,6 @@ _G.packer_plugins = {
     path = "/home/ConnorM/.local/share/nvim/site/pack/packer/start/cmp-emoji",
     url = "https://github.com/hrsh7th/cmp-emoji"
   },
-  ["cmp-git"] = {
-    loaded = true,
-    path = "/home/ConnorM/.local/share/nvim/site/pack/packer/start/cmp-git",
-    url = "https://github.com/petertriho/cmp-git"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/ConnorM/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -223,6 +218,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ConnorM/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/ConnorM/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-kitty"] = {
     loaded = true,
