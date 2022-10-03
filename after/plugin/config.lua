@@ -39,12 +39,13 @@ lspconfig.tsserver.setup {
   }
 }
 
+local luasnip = require'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 local cmp = require'cmp'
 cmp.setup {
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert {
@@ -54,6 +55,13 @@ cmp.setup {
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<Enter>'] = cmp.mapping.confirm { select = true },
     ['<C-e>'] = cmp.mapping.close(),
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end)
   },
   sources = {
     { name = 'nvim_lsp' },
@@ -70,7 +78,7 @@ cmp.setup {
 
 cmp.setup.cmdline(':', {
   mapping = {
-    ['<Enter>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'c' }),
+    ['<C-Enter>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'c' }),
     ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'c' }),
     ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'c' }),
     ['<C-e>'] = cmp.mapping(cmp.mapping.complete(), { 'c' }),
@@ -84,7 +92,7 @@ cmp.setup.cmdline(':', {
 
 cmp.setup.cmdline('/', {
   mapping = {
-    ['<Enter>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'c' }),
+    ['<C-Enter>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'c' }),
     ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'c' }),
     ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'c' }),
   },
