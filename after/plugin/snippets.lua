@@ -18,7 +18,7 @@ local rep = extras.rep
 local postfix = require("luasnip.extras.postfix").postfix
 
 ls.add_snippets("all", {
-  s("log", {
+  s("jslog", {
     t("console.log(\""), i(1, "first"), t("\", "), f(function(one) return one[1][1] end, {1}), t(");")
   })
 })
