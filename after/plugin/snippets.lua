@@ -17,8 +17,23 @@ local l = extras.l
 local rep = extras.rep
 local postfix = require("luasnip.extras.postfix").postfix
 
+local copy_first = function(one) return one[1][1] end
+local capitalize_first_letter = function(one)
+  return string.gsub(one[1][1], "^(.)", function(firstLetter)
+    return string.upper(firstLetter)
+  end)
+end
+
 ls.add_snippets("all", {
   s("jslog", {
-    t("console.log(\""), i(1, "first"), t("\", "), f(function(one) return one[1][1] end, {1}), t(");")
+    t("console.log(\""), i(1, "first"), t("\", "), f(copy_first, {1}), t(");")
+  })
+})
+
+ls.add_snippets('all', {
+  s("st", {
+    t("const ["), i(1, "state"), t(", "),
+    f(function(one) return 'set' .. capitalize_first_letter(one) end, {1}),
+    t("] = useState("), i(2, "null"), t(');')
   })
 })
