@@ -36,4 +36,7 @@ ls.add_snippets("all", {
   s("ds", {
     t("const { "), i(1), t(" } = "), i(2), t(";")
   }),
+  s("im", {
+    t("import { "), i(1), t(" } from \""), i(2), t("\";")
+  })
 })
