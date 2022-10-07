@@ -25,7 +25,7 @@ local capitalize_first_letter = function(one)
 end
 
 ls.add_snippets("all", {
-  s("jslog", {
+  s("lg", {
     t("console.log(\""), i(1, "first"), t("\", "), f(copy_first, {1}), t(");")
   })
 })
