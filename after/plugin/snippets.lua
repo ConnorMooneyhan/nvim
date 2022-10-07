@@ -32,5 +32,8 @@ ls.add_snippets("all", {
     t("const ["), i(1, "state"), t(", "),
     f(function(one) return 'set' .. capitalize_first_letter(one) end, {1}),
     t("] = useState("), i(2, "null"), t(');')
-  })
+  }),
+  s("ds", {
+    t("const { "), i(1), t(" } = "), i(2), t(";")
+  }),
 })
