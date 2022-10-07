@@ -32,7 +32,6 @@ return require('packer').startup(function(use)
   }
   use { -- snippets
     'L3MON4D3/LuaSnip',
-    'rafamadriz/friendly-snippets'
   }
   use 'sbdchd/neoformat'
   use {
