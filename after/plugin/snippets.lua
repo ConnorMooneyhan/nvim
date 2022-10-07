@@ -27,10 +27,7 @@ end
 ls.add_snippets("all", {
   s("lg", {
     t("console.log(\""), i(1, "first"), t("\", "), f(copy_first, {1}), t(");")
-  })
-})
-
-ls.add_snippets('all', {
+  }),
   s("st", {
     t("const ["), i(1, "state"), t(", "),
     f(function(one) return 'set' .. capitalize_first_letter(one) end, {1}),
