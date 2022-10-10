@@ -194,6 +194,11 @@ require'telescope'.setup {
       },
     }
   },
+  pickers = {
+    live_grep = {
+      layout_strategy = 'vertical'
+    }
+  }
 }
 
 local autopairs = require'nvim-autopairs'
