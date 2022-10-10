@@ -183,9 +183,17 @@ require'catppuccin'.setup {
 }
 
 require'telescope'.setup {
-  -- defaults = {
-  --   border = false
-  -- }
+  defaults = {
+    layout_strategy = 'flex',
+    layout_config = {
+      flex = {
+        flip_columns = 120,
+        horizontal = {
+          preview_width = 0.5,
+        },
+      },
+    }
+  },
 }
 
 local autopairs = require'nvim-autopairs'
