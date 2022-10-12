@@ -9,7 +9,7 @@ local get_branch = function()
   end
 
 -- implementing git branch on statusline! from https://www.reddit.com/r/neovim/comments/upe3xx/minimalist_lua_global_statusline_nvim_07_apis_lsp/
-autocmd({'BufWinEnter'}, { callback = get_branch })
+autocmd({'BufWinEnter', 'VimEnter'}, { callback = get_branch })
 autocmd({'User'}, {
   pattern = 'FugitiveChanged',
   callback = get_branch
