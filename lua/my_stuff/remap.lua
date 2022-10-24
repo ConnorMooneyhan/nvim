@@ -8,7 +8,6 @@ local x = keymap.xnoremap
 local i = keymap.inoremap
 local t = keymap.tnoremap
 
-n('<leader>c', ':botright 15 split | term<CR> :set number& relativenumber& signcolumn&<CR> i')
 n('<leader>e', function () telescope.find_files{ default_text = vim.fn.expand('%:h') } end)
 n('<leader>p', telescope.find_files)
 n('<leader>s', telescope.live_grep)
