@@ -1,6 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
 
-autocmd('BufWritePre', {pattern = '*.js', command = 'Neoformat prettier'})
+-- autocmd('BufWritePre', {pattern = '*.js', command = 'Neoformat prettier'})
 
 local get_branch = function()
     if vim.fn.isdirectory '.git' ~= 0 then
