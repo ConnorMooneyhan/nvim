@@ -53,6 +53,7 @@ cmp.setup {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Enter>'] = cmp.mapping.confirm { select = true },
+    ['<C-c>'] = cmp.mapping.complete();
     ['<C-e>'] = cmp.mapping.close(),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if luasnip.expand_or_jumpable() then
@@ -228,4 +229,6 @@ autopairs.add_rules { -- add extra space between pairs
         return opts.prev_char:match('.%]') ~= nil
     end)
     :use_key(']')
-} 
+}
+
+require'todo-comments'.setup()

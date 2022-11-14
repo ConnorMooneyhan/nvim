@@ -44,4 +44,12 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround' -- surroundings deletion and insertion
   use 'tpope/vim-fugitive' -- git integration
   use 'fladson/vim-kitty' -- kitty.conf highlight support
+  use {
+    'folke/drop.nvim',
+    event = "VimEnter",
+    config = function()
+      require'drop.nvim'.setup()
+    end
+  } -- screensaver
+  use 'folke/todo-comments.nvim'
 end)
