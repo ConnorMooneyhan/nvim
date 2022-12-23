@@ -232,3 +232,5 @@ autopairs.add_rules { -- add extra space between pairs
 }
 
 require'todo-comments'.setup()
+
+require'gitsigns'.setup()

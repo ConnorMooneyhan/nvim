@@ -42,13 +42,18 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-autopairs' -- auto-pair feature
   use 'windwp/nvim-ts-autotag' -- autoclose and autorename xml tags
   use 'tpope/vim-surround' -- surroundings deletion and insertion
-  use 'tpope/vim-fugitive' -- git integration
+  use { -- git integration
+    'tpope/vim-fugitive',
+    'lewis6991/gitsigns.nvim'
+  }
   use 'fladson/vim-kitty' -- kitty.conf highlight support
   use {
     'folke/drop.nvim',
     event = "VimEnter",
     config = function()
-      require'drop.nvim'.setup()
+      require'drop'.setup{
+        theme = "snow",
+      }
     end
   } -- screensaver
   use 'folke/todo-comments.nvim'

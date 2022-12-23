@@ -33,3 +33,12 @@ t('<C-l>', '<C-\\><C-n><C-w>l')
 
 i('<C-l>', '<Del>')
 i('<C-Space>', '<CR><Up><End><CR>')
+i('<Up>', '')
+i('<>', '')
+i('<Up>', '')
+i('<Up>', '')
+
+-- vim.keymap.del('i', '<Up>')
+-- vim.keymap.del('i', '<Down>')
+-- vim.keymap.del('i', '<Left>')
+-- vim.keymap.del('i', '<Right>')
