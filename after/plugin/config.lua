@@ -10,7 +10,6 @@ require'mason-lspconfig'.setup {
     'html',
     'intelephense',
     'jsonls',
-    'phpactor',
     'rust_analyzer',
     'sumneko_lua',
     'tailwindcss',
