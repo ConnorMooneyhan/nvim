@@ -11,7 +11,7 @@ require'mason-lspconfig'.setup {
     'intelephense',
     'jsonls',
     'rust_analyzer',
-    'sumneko_lua',
+    'lua_ls',
     'tailwindcss',
     'tsserver',
     'vimls',
@@ -21,7 +21,7 @@ require'mason-lspconfig'.setup {
 
 local lspconfig = require'lspconfig'
 lspconfig.rust_analyzer.setup {}
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
   settings = {
     Lua = {
       diagnostics = {
