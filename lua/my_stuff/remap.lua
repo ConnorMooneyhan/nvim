@@ -29,8 +29,13 @@ local function on_def_list(options)
     filteredItems = items
   end
 
-  vim.fn.setqflist({}, ' ', { title = options.title, items = filteredItems, context = options.context })
-  vim.api.nvim_cmd({ cmd = 'cfirst' }, {})
+  vim.api.nvim_cmd({ cmd = 'e', args = { filteredItems[1].filename } }, {})
+  vim.api.nvim_cmd({
+    cmd = 'call', args = {
+      "cursor(" .. filteredItems[1].lnum .. ", " .. filteredItems[1].col .. ")"
+    }
+  }, {})
+  vim.api.nvim_cmd({ cmd = "normal", args = { "zz" } }, {})
 end
 
 n('<leader>e', function () telescope.find_files{ default_text = vim.fn.expand('%:h') } end)
