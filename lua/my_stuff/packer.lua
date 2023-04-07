@@ -2,7 +2,8 @@ vim.cmd "packadd packer.nvim"
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- package manager
-  use { 'catppuccin/nvim', as = 'catppuccin' } -- color scheme
+  -- use { 'catppuccin/nvim', as = 'catppuccin' } -- color scheme
+  use 'rose-pine/neovim'
   use 'nvim-lua/plenary.nvim' -- lua coroutine support
   use 'nvim-lua/popup.nvim' -- vim-compatible popup support
   use { -- telescope
@@ -47,14 +48,5 @@ return require('packer').startup(function(use)
     'lewis6991/gitsigns.nvim'
   }
   use 'fladson/vim-kitty' -- kitty.conf highlight support
-  use {
-    'folke/drop.nvim',
-    event = "VimEnter",
-    config = function()
-      require'drop'.setup{
-        theme = "snow",
-      }
-    end
-  } -- screensaver
   use 'folke/todo-comments.nvim'
 end)

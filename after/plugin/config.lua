@@ -168,19 +168,19 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
-local colors = require'catppuccin.palettes'.get_palette()
-require'catppuccin'.setup {
-  integrations = {
-    gitsigns = true,
-    cmp = true,
-    telescope = true,
-    treesitter = true,
-    nvimtree = true
-  },
-  highlight_overrides = {
-    LineNr = { guifg = '#F0C6C6' }
-  }
-}
+-- local colors = require'catppuccin.palettes'.get_palette()
+-- require'catppuccin'.setup {
+--   integrations = {
+--     gitsigns = true,
+--     cmp = true,
+--     telescope = true,
+--     treesitter = true,
+--     nvimtree = true
+--   },
+--   highlight_overrides = {
+--     LineNr = { guifg = '#F0C6C6' }
+--   }
+-- }
 
 require'telescope'.setup {
   defaults = {
