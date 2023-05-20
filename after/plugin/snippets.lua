@@ -26,7 +26,7 @@ end
 
 ls.add_snippets("all", {
   s("lg", {
-    t("console.log(\""), i(1), t("\", "), f(copy_first, {1}), t(");")
+    t("console.log(\""), f(copy_first, {1}), t("\", "), i(1), t(");")
   }),
   s("st", {
     t("const ["), i(1, "state"), t(", "),
