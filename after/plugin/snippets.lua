@@ -24,7 +24,7 @@ local capitalize_first_letter = function(one)
   end)
 end
 
-ls.add_snippets("all", {
+ls.add_snippets("javascript", {
   s("lg", {
     t("console.log(\""), f(copy_first, {1}), t("\", "), i(1), t(");")
   }),
@@ -43,3 +43,6 @@ ls.add_snippets("all", {
     t("(() => {"), i(0), t("})()")
   }),
 })
+ls.filetype_extend("typescript", { "javascript" })
+ls.filetype_extend("javascriptreact", { "javascript" })
+ls.filetype_extend("typescriptreact", { "javascript" })
