@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
     'JoosepAlviste/nvim-ts-context-commentstring'
   }
   use 'simrat39/rust-tools.nvim' -- rust-specific code actions
-  use 'windwp/nvim-autopairs' -- auto-pair feature
+  use 'cohama/lexima.vim' -- auto-pair feature
   use 'windwp/nvim-ts-autotag' -- autoclose and autorename xml tags
   use 'tpope/vim-surround' -- surroundings deletion and insertion
   use { -- git integration

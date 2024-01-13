@@ -46,3 +46,27 @@ ls.add_snippets("javascript", {
 ls.filetype_extend("typescript", { "javascript" })
 ls.filetype_extend("javascriptreact", { "javascript" })
 ls.filetype_extend("typescriptreact", { "javascript" })
+
+ls.add_snippets("tex", {
+  s("m", {
+    t("$"), i(1), t("$")
+  }),
+  s("b", {
+    t("\\mathbb{"), i(1), t("}")
+  }),
+  s("mb", {
+    t("$\\mathbb{"), i(1), t("}$")
+  }),
+  s("s", {
+    t("\\mathscr{"), i(1), t("}")
+  }),
+  s("ms", {
+    t("$\\mathscr{"), i(1), t("}$")
+  }),
+  s("be", {
+    t("\\begin{"), i(1), t("}"), i(0), t("\\end{"), f(copy_first, {1}), t("}")
+  }),
+  s("im", {
+    t("\\implies")
+  })
+})

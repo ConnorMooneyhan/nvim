@@ -163,9 +163,9 @@ require'nvim-treesitter.configs'.setup {
       }
     }
   },
-  context_commentstring = {
-    enable = true
-  }
+  -- context_commentstring = {
+  --   enable = true
+  -- }
 }
 
 -- local colors = require'catppuccin.palettes'.get_palette()
@@ -201,34 +201,34 @@ require'telescope'.setup {
   }
 }
 
-local autopairs = require'nvim-autopairs'
-local Rule = require'nvim-autopairs.rule'
-autopairs.setup()
-autopairs.add_rules { -- add extra space between pairs
-  Rule(' ', ' ')
-    :with_pair(function (opts)
-      local pair = opts.line:sub(opts.col - 1, opts.col)
-      return vim.tbl_contains({ '()', '[]', '{}' }, pair)
-    end),
-  Rule('( ', ' )')
-      :with_pair(function() return false end)
-      :with_move(function(opts)
-          return opts.prev_char:match('.%)') ~= nil
-      end)
-      :use_key(')'),
-  Rule('{ ', ' }')
-      :with_pair(function() return false end)
-      :with_move(function(opts)
-          return opts.prev_char:match('.%}') ~= nil
-    end)
-    :use_key('}'),
-  Rule('[ ', ' ]')
-    :with_pair(function() return false end)
-    :with_move(function(opts)
-        return opts.prev_char:match('.%]') ~= nil
-    end)
-    :use_key(']')
-}
+-- local autopairs = require'nvim-autopairs'
+-- local Rule = require'nvim-autopairs.rule'
+-- autopairs.setup()
+-- autopairs.add_rules { -- add extra space between pairs
+--   Rule(' ', ' ')
+--     :with_pair(function (opts)
+--       local pair = opts.line:sub(opts.col - 1, opts.col)
+--       return vim.tbl_contains({ '()', '[]', '{}' }, pair)
+--     end),
+--   Rule('( ', ' )')
+--       :with_pair(function() return false end)
+--       :with_move(function(opts)
+--           return opts.prev_char:match('.%)') ~= nil
+--       end)
+--       :use_key(')'),
+--   Rule('{ ', ' }')
+--       :with_pair(function() return false end)
+--       :with_move(function(opts)
+--           return opts.prev_char:match('.%}') ~= nil
+--     end)
+--     :use_key('}'),
+--   Rule('[ ', ' ]')
+--     :with_pair(function() return false end)
+--     :with_move(function(opts)
+--         return opts.prev_char:match('.%]') ~= nil
+--     end)
+--     :use_key(']')
+-- }
 
 require'todo-comments'.setup()
 
