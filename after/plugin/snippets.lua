@@ -36,6 +36,9 @@ ls.add_snippets("javascript", {
   s("ds", {
     t("const { "), i(1), t(" } = "), i(2), t(";")
   }),
+  s("i", {
+    t("^{-1}")
+  }),
   s("im", {
     t("import { "), i(1), t(" } from \""), i(2), t("\";")
   }),
@@ -48,25 +51,85 @@ ls.filetype_extend("javascriptreact", { "javascript" })
 ls.filetype_extend("typescriptreact", { "javascript" })
 
 ls.add_snippets("tex", {
-  s("m", {
-    t("$"), i(1), t("$")
+  s("al", { -- align*
+    t("\\begin{align*}"), i(0), t("\\end{align*}")
   }),
-  s("b", {
+  s("bb", { -- \mathbb
     t("\\mathbb{"), i(1), t("}")
   }),
-  s("mb", {
-    t("$\\mathbb{"), i(1), t("}$")
-  }),
-  s("s", {
-    t("\\mathscr{"), i(1), t("}")
-  }),
-  s("ms", {
-    t("$\\mathscr{"), i(1), t("}$")
-  }),
-  s("be", {
+  s("be", { -- begin...end
     t("\\begin{"), i(1), t("}"), i(0), t("\\end{"), f(copy_first, {1}), t("}")
   }),
-  s("im", {
+  s("bf", { -- \mathbf
+    t("\\mathbf{"), i(1), t("}"), i(0)
+  }),
+  s("C", { -- Complex Numbers
+    t("\\mathbb{C}")
+  }),
+  s("cal", { -- \mathcal
+    t("\\mathcal{"), i(1), t("}")
+  }),
+  s("fr", { -- fraction
+    t("\\frac{"), i(1), t("}{"), i(2), t("}"), i(0)
+  }),
+  s("im", { -- implies
     t("\\implies")
-  })
+  }),
+  s("l", { -- lambda
+    t("\\lambda")
+  }),
+  s("la", { -- \langle
+    t("\\langle")
+  }),
+  s("lb", { -- left brace
+    t("\\lbrace")
+  }),
+  s("le", { -- \leq
+    t("\\leq")
+  }),
+  s("lrp", { -- \left( ... \right)
+    t("\\left( "), i(1), t(" \\right)"), i(0)
+  }),
+  s("lra", { -- \langle ... \rangle
+    t("\\left\\langle "), i(1), t(" \\right\\rangle"), i(0)
+  }),
+  s("lrb", { -- \lbrace ... \rbrace
+    t("\\left\\lbrace "), i(1), t(" \\right\\rbrace"), i(0)
+  }),
+  s("lu", { -- _{...}^{...}
+    t("_{"), i(1), t("}^{"), i(2), t("}"), i(0)
+  }),
+  s("m", { -- $...$
+    t("$"), i(1), t("$")
+  }),
+  s("mm", { -- $$...$$
+    t("\\begin{equation*}"), i(0), t("\\end{equation*}")
+  }),
+  s("in", { -- \in
+    t("\\in")
+  }),
+  s("ne", { -- \neq
+    t("\\neq")
+  }),
+  s("R", { -- Real Numbers
+    t("\\mathbb{R}")
+  }),
+  s("ra", { -- \rangle
+    t("\\rangle")
+  }),
+  s("rb", { -- right brace
+    t("\\rbrace")
+  }),
+  s("rm", { -- \mathrm{...}\,
+    t("\\mathrm{"), i(1), t("}\\,"), i(0)
+  }),
+  s("scr", { -- \mathscr
+    t("\\mathscr{"), i(1), t("}")
+  }),
+  s("sub", { -- subset
+    t("\\subset")
+  }),
+  s("Z", { -- The Integers!
+    t("\\mathbb{Z}")
+  }),
 })
