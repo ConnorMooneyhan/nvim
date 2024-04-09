@@ -63,9 +63,6 @@ ls.add_snippets("tex", {
   s("bf", { -- \mathbf
     t("\\mathbf{"), i(1), t("}"), i(0)
   }),
-  s("C", { -- Complex Numbers
-    t("\\mathbb{C}")
-  }),
   s("cal", { -- \mathcal
     t("\\mathcal{"), i(1), t("}")
   }),
@@ -111,9 +108,6 @@ ls.add_snippets("tex", {
   s("ne", { -- \neq
     t("\\neq")
   }),
-  s("R", { -- Real Numbers
-    t("\\mathbb{R}")
-  }),
   s("ra", { -- \rangle
     t("\\rangle")
   }),
@@ -128,8 +122,5 @@ ls.add_snippets("tex", {
   }),
   s("sub", { -- subset
     t("\\subset")
-  }),
-  s("Z", { -- The Integers!
-    t("\\mathbb{Z}")
   }),
 })
