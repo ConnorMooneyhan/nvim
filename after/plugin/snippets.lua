@@ -69,11 +69,14 @@ ls.add_snippets("tex", {
   s("fr", { -- fraction
     t("\\frac{"), i(1), t("}{"), i(2), t("}"), i(0)
   }),
+  s("gs", { -- sigma
+    t("\\sigma")
+  }),
+  s("gl", { -- lambda
+    t("\\lambda")
+  }),
   s("im", { -- implies
     t("\\implies")
-  }),
-  s("l", { -- lambda
-    t("\\lambda")
   }),
   s("la", { -- \langle
     t("\\langle")
