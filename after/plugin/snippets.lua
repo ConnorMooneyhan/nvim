@@ -69,17 +69,14 @@ ls.add_snippets("tex", {
   s("fr", { -- fraction
     t("\\frac{"), i(1), t("}{"), i(2), t("}"), i(0)
   }),
-  s("gs", { -- sigma
-    t("\\sigma")
-  }),
-  s("gl", { -- lambda
-    t("\\lambda")
-  }),
   s("im", { -- implies
     t("\\implies")
   }),
   s("la", { -- \langle
     t("\\langle")
+  }),
+  s("lam", { -- lambda
+    t("\\lambda")
   }),
   s("lb", { -- left brace
     t("\\lbrace")
@@ -122,6 +119,12 @@ ls.add_snippets("tex", {
   }),
   s("scr", { -- \mathscr
     t("\\mathscr{"), i(1), t("}")
+  }),
+  s("sig", { -- sigma
+    t("\\sigma")
+  }),
+  s("sm", { -- \setminus
+    t("\\setminus")
   }),
   s("sub", { -- subset
     t("\\subset")
