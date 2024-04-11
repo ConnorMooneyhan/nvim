@@ -149,6 +149,7 @@ require'nvim-treesitter.configs'.setup {
     "dockerfile",
     "html",
     "lua",
+    "latex",
     "javascript",
     "php",
     "rust",
