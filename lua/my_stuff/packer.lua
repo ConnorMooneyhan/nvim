@@ -16,7 +16,6 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter-textobjects',
   }
   use { -- base lsp setup
-    'VonHeikemen/lsp-zero.nvim',
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',

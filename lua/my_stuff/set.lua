@@ -28,3 +28,4 @@ vim.g.neoformat_try_node_exe = 1
 -- vim.g.gruvbox_flat_style = 'dark'
 vim.g.Hexokinase_highlighters = { 'virtual' }
 -- vim.g.catppuccin_flavour = "mocha"
+vim.g.lsp_zero_extend_lspconfig = 0
