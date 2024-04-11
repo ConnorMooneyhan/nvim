@@ -102,7 +102,7 @@ cmp.setup.cmdline('/', {
 
 local lsp = require'lsp-zero'
 lsp.preset'lsp-only'
-lsp.nvim_workspace()
+-- lsp.nvim_workspace()
 lsp.setup()
 
 require'nvim-treesitter.configs'.setup {
