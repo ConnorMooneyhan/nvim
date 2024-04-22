@@ -108,6 +108,9 @@ ls.add_snippets("tex", {
   s("ne", { -- \neq
     t("\\neq")
   }),
+  s("ov", { -- \overline{...}
+    t("\\overline{"), i(1), t("}")
+  }),
   s("ra", { -- \rangle
     t("\\rangle")
   }),
