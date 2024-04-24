@@ -126,6 +126,9 @@ ls.add_snippets("tex", {
   s("scr", { -- \mathscr
     t("\\mathscr{"), i(1), t("}")
   }),
+  s("sd", { -- \bigtriangleup (symmetric difference)
+    t("\\bigtriangleup")
+  }),
   s("sig", { -- sigma
     t("\\sigma")
   }),
