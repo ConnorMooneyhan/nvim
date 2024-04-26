@@ -135,4 +135,7 @@ ls.add_snippets("tex", {
   s("sub", { -- subset
     t("\\subset")
   }),
+  s("ul", { -- \underline{...}
+    t("\\underline{"), i(1), t("}"), i(0)
+  }),
 })
