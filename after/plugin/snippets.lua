@@ -138,4 +138,7 @@ ls.add_snippets("tex", {
   s("ul", { -- \underline{...}
     t("\\underline{"), i(1), t("}"), i(0)
   }),
+  s("wt", { -- \widetilde{...}
+    t("\\widetilde{"), i(1), t("}"), i(0)
+  }),
 })
