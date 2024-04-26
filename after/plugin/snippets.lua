@@ -129,9 +129,6 @@ ls.add_snippets("tex", {
   s("sd", { -- \bigtriangleup (symmetric difference)
     t("\\bigtriangleup")
   }),
-  s("sig", { -- sigma
-    t("\\sigma")
-  }),
   s("sm", { -- \setminus
     t("\\setminus")
   }),
