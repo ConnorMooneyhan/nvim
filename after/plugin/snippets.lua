@@ -121,7 +121,7 @@ ls.add_snippets("tex", {
     t("\\rbrace")
   }),
   s("rm", { -- \mathrm{...}\,
-    t("\\mathrm{"), i(1), t("}\\,"), i(0)
+    t("\\mathrm{"), i(1), t("}"), i(0)
   }),
   s("scr", { -- \mathscr
     t("\\mathscr{"), i(1), t("}")
