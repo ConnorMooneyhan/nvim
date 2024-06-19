@@ -66,8 +66,8 @@ ls.add_snippets("tex", {
   s("cal", { -- \mathcal
     t("\\mathcal{"), i(1), t("}")
   }),
-  s("em", { -- \emptyset
-    t("\\emptyset")
+  s("em", { -- \varnothing
+    t("\\varnothing")
   }),
   s("fr", { -- fraction
     t("\\frac{"), i(1), t("}{"), i(2), t("}"), i(0)
