@@ -66,6 +66,9 @@ ls.add_snippets("tex", {
   s("cal", { -- \mathcal
     t("\\mathcal{"), i(1), t("}")
   }),
+  s("dq", { -- double quotes (``...'')
+    t("``"), i(1), t("''")
+  }),
   s("em", { -- \varnothing
     t("\\varnothing")
   }),
@@ -134,6 +137,9 @@ ls.add_snippets("tex", {
   }),
   s("sm", { -- \setminus
     t("\\setminus")
+  }),
+  s("sq", { -- single quotes (`...')
+    t("`"), i(1), t("'")
   }),
   s("sub", { -- subset
     t("\\subset")
