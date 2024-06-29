@@ -23,6 +23,10 @@ local capitalize_first_letter = function(one)
     return string.upper(firstLetter)
   end)
 end
+local not_after_dollar_m = function() -- ChatGPT wizardry, regrettably
+  local line_to_cursor = vim.api.nvim_get_current_line():sub(1, vim.fn.col('.') - 1)
+  return not line_to_cursor:match("%$m$")
+end
 
 ls.add_snippets("javascript", {
   s("lg", {
@@ -102,7 +106,7 @@ ls.add_snippets("tex", {
   s("lu", { -- _{...}^{...}
     t("_{"), i(1), t("}^{"), i(2), t("}"), i(0)
   }),
-  s("m", { -- $...$
+  s({ trig = "m", condition = not_after_dollar_m }, { -- $...$
     t("$"), i(1), t("$")
   }),
   s("mm", { -- $$...$$
