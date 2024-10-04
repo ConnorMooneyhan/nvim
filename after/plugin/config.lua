@@ -48,7 +48,7 @@ require'mason-lspconfig'.setup {
     'ltex',
     'tailwindcss',
     'texlab',
-    'tsserver',
+    'ts_ls',
     'vimls',
     'yamlls'
   },
@@ -68,7 +68,7 @@ lspconfig.lua_ls.setup {
     }
   }
 }
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
   init_options = {
     preferences = {
       includeCompletionsForImportStatements = true,
