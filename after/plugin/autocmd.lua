@@ -1,6 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
 
-autocmd('BufWritePost', {pattern = '*.tex', command = 'silent !pdflatex %'})
+autocmd('BufWritePost', {pattern = '*.tex', command = 'silent !pdflatex -output-directory=%:h %'})
 
 local get_branch = function()
     if vim.fn.isdirectory '.git' ~= 0 then
