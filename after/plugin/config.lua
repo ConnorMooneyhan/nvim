@@ -220,8 +220,13 @@ require'nvim-treesitter.configs'.setup {
 --   }
 -- }
 
+local ignore_filetypes_list = {
+  "%.log", "%.aux", "%.pdf"
+}
+
 require'telescope'.setup {
   defaults = {
+    file_ignore_patterns = ignore_filetypes_list,
     layout_strategy = 'flex',
     layout_config = {
       flex = {
