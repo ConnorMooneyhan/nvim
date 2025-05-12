@@ -95,14 +95,17 @@ ls.add_snippets("tex", {
   s("le", { -- \leq
     t("\\leq")
   }),
-  s("lrp", { -- \left( ... \right)
-    t("\\left( "), i(1), t(" \\right)"), i(0)
-  }),
   s("lra", { -- \langle ... \rangle
     t("\\left\\langle "), i(1), t(" \\right\\rangle"), i(0)
   }),
   s("lrb", { -- \lbrace ... \rbrace
     t("\\left\\lbrace "), i(1), t(" \\right\\rbrace"), i(0)
+  }),
+  s("lrp", { -- \left( ... \right)
+    t("\\left( "), i(1), t(" \\right)"), i(0)
+  }),
+  s("lrsq", { -- \left[ ... \right]
+    t("\\left[ "), i(1), t(" \\right]"), i(0)
   }),
   s("lu", { -- _{...}^{...}
     t("_{"), i(1), t("}^{"), i(2), t("}"), i(0)
