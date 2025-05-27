@@ -155,6 +155,9 @@ ls.add_snippets("tex", {
   s("tbf", { -- \textbf{...}
     t("\\textbf{"), i(1), t("}"), i(0)
   }),
+  s("tit", { -- \textit{...}
+    t("\\textit{"), i(1), t("}"), i(0)
+  }),
   s("ul", { -- \underline{...}
     t("\\underline{"), i(1), t("}"), i(0)
   }),
