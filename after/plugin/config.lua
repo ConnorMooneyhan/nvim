@@ -52,9 +52,9 @@ require'mason-lspconfig'.setup {
     'vimls',
     'yamlls'
   },
-  handlers = {
-    default_setup,
-  }
+  -- handlers = {
+  --   default_setup,
+  -- }
 }
 
 local lspconfig = require'lspconfig'
@@ -142,69 +142,69 @@ vim.diagnostic.config({
   virtual_text = false
 })
 
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = {
-    "bash",
-    "css",
-    "dockerfile",
-    "html",
-    "lua",
-    "latex",
-    "javascript",
-    "php",
-    "rust",
-    "scss",
-    "sql",
-    "toml",
-    "tsx",
-    "typescript",
-    "vim",
-    "yaml",
-  },
-  indent = {
-    enable = true
-  },
-  highlight = {
-    enable = true
-  },
-  autotag = { -- nvim-ts-autotag 
-    enable = true,
-  },
-  textobjects = {
-    select = {
-      enable = true,
-      lookahead = true,
-      keymaps = {
-        ['if'] = '@function.inner',
-        ['af'] = '@function.outer',
-        ['ic'] = '@call.inner',
-        ['ac'] = '@call.outer',
-      }
-    },
-    move = {
-      enable = true,
-      set_jumps = true,
-      goto_next_start = {
-        ['<C-\'>'] = '@function.outer'
-      },
-      goto_next_end = {},
-      goto_previous_start = {
-        ['<C-;>'] = '@function.outer'
-      },
-      goto_previous_end = {},
-    },
-    lsp_interop = {
-      enable = true,
-      border = 'none',
-      peek_definition_code = {
-        ['<leader>df'] = '@function.outer',
-      }
-    }
-  },
-  -- context_commentstring = {
-  --   enable = true
-  -- }
-}
+-- require'nvim-treesitter.configs'.setup {
+--   ensure_installed = {
+--     "bash",
+--     "css",
+--     "dockerfile",
+--     "html",
+--     "lua",
+--     "latex",
+--     "javascript",
+--     "php",
+--     "rust",
+--     "scss",
+--     "sql",
+--     "toml",
+--     "tsx",
+--     "typescript",
+--     "vim",
+--     "yaml",
+--   },
+--   indent = {
+--     enable = true
+--   },
+--   highlight = {
+--     enable = true
+--   },
+--   autotag = { -- nvim-ts-autotag 
+--     enable = true,
+--   },
+--   textobjects = {
+--     select = {
+--       enable = true,
+--       lookahead = true,
+--       keymaps = {
+--         ['if'] = '@function.inner',
+--         ['af'] = '@function.outer',
+--         ['ic'] = '@call.inner',
+--         ['ac'] = '@call.outer',
+--       }
+--     },
+--     move = {
+--       enable = true,
+--       set_jumps = true,
+--       goto_next_start = {
+--         ['<C-\'>'] = '@function.outer'
+--       },
+--       goto_next_end = {},
+--       goto_previous_start = {
+--         ['<C-;>'] = '@function.outer'
+--       },
+--       goto_previous_end = {},
+--     },
+--     lsp_interop = {
+--       enable = true,
+--       border = 'none',
+--       peek_definition_code = {
+--         ['<leader>df'] = '@function.outer',
+--       }
+--     }
+--   },
+--   -- context_commentstring = {
+--   --   enable = true
+--   -- }
+-- }
 
 -- local colors = require'catppuccin.palettes'.get_palette()
 -- require'catppuccin'.setup {
