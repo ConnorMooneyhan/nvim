@@ -107,6 +107,9 @@ ls.add_snippets("tex", {
   s("lrsq", { -- \left[ ... \right]
     t("\\left[ "), i(1), t(" \\right]"), i(0)
   }),
+  s("lrv", { -- \left[ ... \right]
+    t("\\left| "), i(1), t(" \\right|"), i(0)
+  }),
   s("lu", { -- _{...}^{...}
     t("_{"), i(1), t("}^{"), i(2), t("}"), i(0)
   }),
