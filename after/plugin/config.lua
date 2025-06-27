@@ -276,3 +276,5 @@ require'telescope'.setup {
 require'todo-comments'.setup()
 
 require'gitsigns'.setup()
+
+require'lazy'.update({ show = false })
