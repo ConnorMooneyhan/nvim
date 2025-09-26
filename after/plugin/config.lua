@@ -24,12 +24,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local default_setup = function(server)
-  require('lspconfig')[server].setup({
-    capabilities = lsp_capabilities,
-  })
-end
-
 -- END LSP Keymaps
 
 require'mason'.setup()
@@ -57,9 +51,8 @@ require'mason-lspconfig'.setup {
   -- }
 }
 
-local lspconfig = require'lspconfig'
-lspconfig.rust_analyzer.setup {}
-lspconfig.lua_ls.setup {
+vim.lsp.config('rust_analyzer', {})
+vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       diagnostics = {
@@ -67,14 +60,14 @@ lspconfig.lua_ls.setup {
       }
     }
   }
-}
-lspconfig.ts_ls.setup {
+})
+vim.lsp.config('ts_ls', {
   init_options = {
     preferences = {
       includeCompletionsForImportStatements = true,
     }
   }
-}
+})
 
 local luasnip = require'luasnip'
 local cmp = require'cmp'
