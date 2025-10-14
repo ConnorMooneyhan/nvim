@@ -27,7 +27,6 @@ local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- END LSP Keymaps
 
 require'mason'.setup()
-require'rust-tools'.setup {}
 
 require'mason-lspconfig'.setup {
   ensure_installed = {

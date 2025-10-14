@@ -81,7 +81,7 @@ return {
     'tpope/vim-commentary',
     'JoosepAlviste/nvim-ts-context-commentstring'
   },
-  { 'simrat39/rust-tools.nvim' }, -- rust-specific code actions
+  -- { 'simrat39/rust-tools.nvim' }, -- REPLACE with mrcjkb/rustaceanvim
   { 'cohama/lexima.vim' }, -- auto-pair feature
   { 'windwp/nvim-ts-autotag' }, -- autoclose and autorename xml tags
   { 'tpope/vim-surround' }, -- surroundings deletion and insertion
