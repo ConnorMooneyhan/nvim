@@ -213,7 +213,7 @@ vim.diagnostic.config({
 -- }
 
 local ignore_filetypes_list = {
-  "%.log", "%.aux", "%.pdf"
+  "%.log", "%.aux", "%.pdf", "%.jpg", "%.png"
 }
 
 require'telescope'.setup {
