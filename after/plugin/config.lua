@@ -82,6 +82,7 @@ cmp.setup {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Enter>'] = cmp.mapping.confirm { select = true },
+    ['<C-CR>'] = cmp.mapping.confirm { select = true },
     ['<C-c>'] = cmp.mapping.complete();
     ['<C-e>'] = cmp.mapping.close(),
     ['<Tab>'] = cmp.mapping(function(fallback)
@@ -105,13 +106,15 @@ cmp.setup {
   },
 }
 
+local confirm_cmdline = cmp.mapping.confirm({ select = true })
+
 cmp.setup.cmdline(':', {
-  mapping = {
-    ['<C-Enter>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'c' }),
-    ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'c' }),
-    ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'c' }),
+  mapping = cmp.mapping.preset.cmdline({
+    ['<C-Enter>'] = cmp.mapping(confirm_cmdline, { 'c' }),
+    ['<C-CR>'] = cmp.mapping(confirm_cmdline, { 'c' }),
+    ['<C-y>'] = cmp.mapping(confirm_cmdline, { 'c' }),
     ['<C-e>'] = cmp.mapping(cmp.mapping.complete(), { 'c' }),
-  },
+  }),
   sources = {
     { name = 'cmdline' },
     { name = 'emoji' },
@@ -120,11 +123,11 @@ cmp.setup.cmdline(':', {
 })
 
 cmp.setup.cmdline('/', {
-  mapping = {
-    ['<C-Enter>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'c' }),
-    ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'c' }),
-    ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'c' }),
-  },
+  mapping = cmp.mapping.preset.cmdline({
+    ['<C-Enter>'] = cmp.mapping(confirm_cmdline, { 'c' }),
+    ['<C-CR>'] = cmp.mapping(confirm_cmdline, { 'c' }),
+    ['<C-y>'] = cmp.mapping(confirm_cmdline, { 'c' }),
+  }),
   sources = {
     { name = 'buffer' },
   }
